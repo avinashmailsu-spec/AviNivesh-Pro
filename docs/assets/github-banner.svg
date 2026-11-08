@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-label="AviNivesh Pro 2.0, Indian Wealth Intelligence Platform. Developed by Avinash Ekka.">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071427"/><stop offset=".54" stop-color="#102d3f"/><stop offset="1" stop-color="#122141"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#58e6ae"/><stop offset=".55" stop-color="#41d8db"/><stop offset="1" stop-color="#b19aff"/></linearGradient>
+    <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#45e5c2" stop-opacity=".23"/><stop offset="1" stop-color="#45e5c2" stop-opacity="0"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="19"/></filter>
+  </defs>
+  <rect width="1200" height="320" rx="28" fill="url(#bg)"/>
+  <circle cx="1050" cy="50" r="105" fill="#37d3ab" opacity=".13" filter="url(#glow)"/>
+  <circle cx="960" cy="240" r="95" fill="#7d6efe" opacity=".14" filter="url(#glow)"/>
+  <g opacity=".09" stroke="#b6dded" stroke-width="1">
+    <path d="M620 44H1158 M620 94H1158 M620 144H1158 M620 194H1158 M620 244H1158"/>
+    <path d="M660 35V272 M750 35V272 M840 35V272 M930 35V272 M1020 35V272 M1110 35V272"/>
+  </g>
+  <g transform="translate(53 49)">
+    <rect width="67" height="67" rx="20" fill="#183950" stroke="#439e9a" stroke-opacity=".75"/>
+    <path d="M15 46 L27 30 L35 37 L51 17" fill="none" stroke="#67e7be" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="51" cy="17" r="4" fill="#a1f7d8"/>
+  </g>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="138" y="87" fill="#7ae5c2" font-size="17" font-weight="700" letter-spacing="3">INDIAN WEALTH INTELLIGENCE</text>
+    <text x="57" y="165" fill="#f4fbff" font-size="57" font-weight="800">AviNivesh <tspan fill="#7aeac4">Pro</tspan><tspan font-size="33" fill="#b6a9fa"> 2.0</tspan></text>
+    <text x="57" y="207" fill="#aec8dc" font-size="21">Markets  ·  Portfolio  ·  Planning  ·  Research</text>
+    <text x="57" y="271" fill="#89a6ba" font-size="16">Developed by Avinash Ekka</text>
+  </g>
+  <path d="M622 234 L682 215 L737 221 L793 179 L849 191 L912 120 L963 137 L1019 86 L1073 109 L1142 53 L1142 284 L622 284 Z" fill="url(#fill)"/>
+  <path d="M622 234 L682 215 L737 221 L793 179 L849 191 L912 120 L963 137 L1019 86 L1073 109 L1142 53" fill="none" stroke="url(#line)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#8bf0cf"><circle cx="793" cy="179" r="6"/><circle cx="912" cy="120" r="6"/><circle cx="1019" cy="86" r="6"/><circle cx="1142" cy="53" r="6"/></g>
+</svg>

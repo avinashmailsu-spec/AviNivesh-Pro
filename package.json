@@ -1,0 +1,37 @@
+{
+  "name": "avinivesh-pro",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AviNivesh Pro 2.0 — Indian wealth intelligence platform. Developed by Avinash Ekka.",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c cyan,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node --watch server/index.js",
+    "dev:client": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/repo-check.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "framer-motion": "^12.23.0",
+    "lucide-react": "^0.468.0",
+    "recharts": "^2.15.1",
+    "ws": "^8.18.3",
+    "protobufjs": "^7.5.4",
+    "exceljs": "^4.4.0",
+    "jspdf": "^3.0.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.1",
+    "vite": "^6.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

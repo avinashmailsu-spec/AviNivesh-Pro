@@ -1,0 +1,22 @@
+AVINIVESH PRO 2.0 — GITHUB-READY REPOSITORY
+Developed by Avinash Ekka
+
+PUBLISH TO GITHUB
+1. Extract the ZIP.
+2. Read GITHUB_UPLOAD_GUIDE.md.
+3. Upload all extracted files/folders, including hidden .github files.
+4. Do NOT upload personal .env credentials or private holdings.
+5. Check the Actions/CI run after uploading.
+
+RUN LOCALLY ON WINDOWS
+1. Install Node.js 20+.
+2. Double-click start-windows.bat.
+3. Visit http://localhost:5173.
+
+The 25 included Node unit tests can be run with npm test, even without
+external market credentials. Building the React app requires npm install.
+In the packaging environment, the npm registry was unreachable; CI will
+run install, tests and build after upload.
+
+This full-stack application cannot run on GitHub Pages alone.
+See README.md and docs/APP_GUIDE.md for setup and limitations.

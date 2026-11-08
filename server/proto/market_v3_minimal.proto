@@ -1,0 +1,10 @@
+// Minimal interoperable field definitions extracted from Upstox V3 public feed specification.
+// Unknown fields are ignored by protobufjs: only LTPC updates are parsed.
+syntax = "proto3";
+package com.upstox.marketdatafeederv3udapi.rpc.proto;
+message LTPC { double ltp = 1; int64 ltt = 2; int64 ltq = 3; double cp = 4; }
+message MarketFullFeed { LTPC ltpc = 1; }
+message IndexFullFeed { LTPC ltpc = 1; }
+message FullFeed { oneof one { MarketFullFeed marketFF = 1; IndexFullFeed indexFF = 2; } }
+message Feed { oneof one { LTPC ltpc = 1; FullFeed fullFeed = 2; } }
+message FeedResponse { map<string, Feed> feeds = 2; int64 currentTs = 3; }

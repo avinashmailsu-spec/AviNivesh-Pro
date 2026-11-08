@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseAmfi} from '../server/funds.js';
+test('AMFI NAV report parsing',()=>{const text='Open Ended Schemes\nScheme Code;ISIN Div Payout/ ISIN Growth;ISIN Div Reinvestment;Scheme Name;Net Asset Value;Date\n101;INF00000001;;Example Fund Direct Growth;54.201;07-Nov-2026\n102;INF00000002;;Invalid NAV;N.A.;07-Nov-2026\n';const a=parseAmfi(text);assert.equal(a.length,1);assert.equal(a[0].code,'101');assert.equal(a[0].nav,54.201);assert.equal(a[0].category,'Open Ended Schemes')});

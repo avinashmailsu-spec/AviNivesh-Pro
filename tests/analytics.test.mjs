@@ -1,0 +1,14 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {xirr,riskMetrics,weightedAllocation,rebalancePlan,concentrationRisk,stressTest,goalModel,monteCarlo,estimateTaxScenario,parseCsv,makeCsv,retirementCorpus} from '../src/analytics.js';
+test('xirr annual return',()=>assert.ok(Math.abs(xirr([{date:'2025-01-01',amount:-10000},{date:'2026-01-01',amount:11000}])-10)<.02));
+test('xirr no opposite sign',()=>assert.equal(xirr([{date:'2025-01-01',amount:100},{date:'2026-01-01',amount:200}]),null));
+test('drawdown and volatility',()=>{const v=riskMetrics([100,110,77,88]);assert.ok(v.maxDrawdown<-29&&v.maxDrawdown>-31);assert.ok(v.volatility>0)});
+test('asset allocation and rebalancing',()=>{const a=[{type:'Equity',value:80},{type:'Cash',value:20}];assert.equal(weightedAllocation(a)[0].percent,80);assert.equal(rebalancePlan(a,{Equity:50,Cash:50})[0].difference,-30);});
+test('concentration',()=>assert.equal(concentrationRisk([{value:75},{value:25}]).largest,75));
+test('portfolio stress',()=>assert.equal(stressTest([{type:'Equity',value:100}],{Equity:-20}).after,80));
+test('goal model',()=>assert.ok(goalModel({target:100000,years:10,rate:10,monthly:1000}).nominalTarget>100000));
+test('deterministic Monte Carlo distribution',()=>{const a=monteCarlo({years:3,paths:100});assert.deepEqual(a,monteCarlo({years:3,paths:100}));assert.ok(a.p10<=a.median&&a.median<=a.p90);});
+test('tax is configurable and illustrative',()=>assert.equal(estimateTaxScenario({gain:100000,rate:10,cess:4}).tax,10400));
+test('CSV handles commas quotes and prevents spreadsheet formula injection',()=>{const rows=parseCsv('name,qty\n"TCS, Ltd",4\n"quote ""test""",3');assert.equal(rows[0].name,'TCS, Ltd');assert.equal(rows[1].name,'quote "test"');assert.match(makeCsv([{symbol:'=IMPORTXML(1)'}]),/"'=IMPORTXML/);});
+test('retirement corpus grows with inflation',()=>assert.ok(retirementCorpus({expense:40000,years:20}).corpus>40000*12/.035));
+test('CSV preserves numeric negative return',()=>assert.match(makeCsv([{gain:-1200}]),/"-1200"/));

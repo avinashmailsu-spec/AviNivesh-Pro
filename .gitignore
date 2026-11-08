@@ -1,0 +1,34 @@
+# Dependencies and build outputs
+node_modules/
+dist/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Environment variables and credentials (keep the example)
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+*.secret
+
+# Local financial exports and data backups
+private-data/
+local-data/
+exports/
+backups/
+
+# Logs and temp files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
