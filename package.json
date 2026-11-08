@@ -20,7 +20,7 @@
     "lucide-react": "^0.468.0",
     "recharts": "^2.15.1",
     "ws": "^8.18.3",
-    "protobufjs": "^7.5.4",
+    "protobufjs": "^8.8.1",
     "exceljs": "^4.4.0",
     "jspdf": "^3.0.3"
   },
